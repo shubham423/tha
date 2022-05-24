@@ -1,6 +1,5 @@
 <resources>
-    <string name="app_name">tha</string>
-    <!-- TODO: Remove or change this placeholder text -->
+    <string name="app_name">Notes App</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
     <string name="email">Email</string>
@@ -19,7 +18,7 @@
     <string name="error_not_a_valid_password">Please enter a valid Password</string>
     <string name="error_incorrectly_repeated_password">The passwords do not match</string>
     <string name="confirm_password">Confirm Password</string>
-    <string name="already_have_an_account_signin">Already have an account? SignIn</string>
+    <string name="already_have_an_account_signin">Already have an account?</string>
     <string name="error_invalid_credentials">Invalid Credentials</string>
     <string name="mobile">Mobile</string>
     <string name="title">Title</string>
@@ -39,4 +38,7 @@
     <string name="update">Update</string>
     <string name="description_length_toast">description character length should be between 100 and 1000</string>
     <string name="title_length_toast">description character length should be between 5 and 100</string>
+    <string name="signin">Sign In</string>
+    <string name="title_hint">Title here</string>
+    <string name="description_hint">Description will go here if we have it</string>
 </resources>

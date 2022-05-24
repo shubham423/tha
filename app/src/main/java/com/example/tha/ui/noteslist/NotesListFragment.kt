@@ -8,7 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.navigation.findNavController
 import com.example.tha.R
-import com.example.tha.data.viewmodels.NotesViewModel
+import com.example.tha.ui.viewmodels.NotesViewModel
 import com.example.tha.databinding.FragmentNotesListBinding
 import com.example.tha.ui.noteslist.adapter.ListAdapter
 import dagger.hilt.android.AndroidEntryPoint
@@ -34,8 +34,14 @@ class NotesListFragment : Fragment(){
         super.onViewCreated(view, savedInstanceState)
         setupRecyclerview()
         whenPasswordIsValid.getAllData.observe(viewLifecycleOwner, { data ->
+            if (data.isEmpty()){
+                binding.noDataImageView.visibility=View.VISIBLE
+                binding.noDataTextView.visibility=View.VISIBLE
+            }else{
+                binding.noDataImageView.visibility=View.GONE
+                binding.noDataTextView.visibility=View.GONE
+            }
             adapter.setData(data)
-            binding.recyclerView.scheduleLayoutAnimation()
         })
 
         initClickListeners()

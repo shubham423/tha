@@ -8,7 +8,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.tha.AuthViewModel
+import com.example.tha.ui.viewmodels.AuthViewModel
 import com.example.tha.databinding.FragmentRegisterBinding
 import dagger.hilt.android.AndroidEntryPoint
 

@@ -1,10 +1,11 @@
-package com.example.tha
+package com.example.tha.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
+import com.example.tha.R
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

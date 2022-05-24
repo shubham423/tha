@@ -9,12 +9,10 @@ import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import android.view.Window
+import android.view.*
 import android.widget.LinearLayout
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ActivityCompat
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
@@ -22,7 +20,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.navigation.fragment.navArgs
 import com.example.tha.R
 import com.example.tha.data.models.Note
-import com.example.tha.data.viewmodels.NotesViewModel
+import com.example.tha.ui.viewmodels.NotesViewModel
 import com.example.tha.databinding.DialogChoosePictureBinding
 import com.example.tha.databinding.FragmentUpdateNoteBinding
 import dagger.hilt.android.AndroidEntryPoint
@@ -46,6 +44,17 @@ class UpdateNoteFragment : Fragment() {
         return binding.root
     }
 
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.update_fragment_menu, menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        when (item.itemId) {
+            R.id.menu_delete -> confirmItemRemoval()
+        }
+        return super.onOptionsItemSelected(item)
+    }
+
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.currentTitleEt.setText(args.currentItem.title)
@@ -64,6 +73,22 @@ class UpdateNoteFragment : Fragment() {
         binding.image.setOnClickListener {
             showImageChooserDialog()
         }
+    }
+    private fun confirmItemRemoval() {
+        val builder = AlertDialog.Builder(requireContext())
+        builder.setPositiveButton("Yes") { _, _ ->
+            mViewModel.deleteItem(args.currentItem)
+            Toast.makeText(
+                requireContext(),
+                "Successfully Removed: ${args.currentItem.title}",
+                Toast.LENGTH_SHORT
+            ).show()
+            findNavController().navigate(R.id.action_updateNoteFragment_to_listFragment)
+        }
+        builder.setNegativeButton("No") { _, _ -> }
+        builder.setTitle("Delete '${args.currentItem.title}'?")
+        builder.setMessage("Are you sure you want to remove '${args.currentItem.title}'?")
+        builder.create().show()
     }
 
     private fun updateItem() {

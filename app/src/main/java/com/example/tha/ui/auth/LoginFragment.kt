@@ -9,8 +9,8 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
-import com.example.tha.AuthViewModel
-import com.example.tha.MainActivity
+import com.example.tha.ui.viewmodels.AuthViewModel
+import com.example.tha.ui.MainActivity
 import com.example.tha.databinding.FragmentLoginBinding
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -50,7 +50,7 @@ class LoginFragment : Fragment() {
     private fun subscribeToObservers() {
         viewModel.loginStatus.observe(viewLifecycleOwner) {
             if (it=="success"){
-                startActivity(Intent(requireContext(),MainActivity::class.java))
+                startActivity(Intent(requireContext(), MainActivity::class.java))
             }else{
                 Toast.makeText(requireActivity(), it, Toast.LENGTH_SHORT).show()
             }

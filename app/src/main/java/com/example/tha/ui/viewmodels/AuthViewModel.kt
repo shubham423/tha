@@ -1,11 +1,11 @@
-package com.example.tha
+package com.example.tha.ui.viewmodels
 
 import android.content.Context
 import android.content.SharedPreferences
-import android.util.Patterns
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import com.example.tha.R
 import com.example.tha.utils.Constants.MAX_USERNAME_LENGTH
 import com.example.tha.utils.Constants.MIN_USERNAME_LENGTH
 import com.example.tha.utils.Extensions.isEmailValid

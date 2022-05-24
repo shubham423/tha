@@ -12,10 +12,13 @@ interface NotesDao {
     fun getAllData(): LiveData<List<Note>>
 
     @Insert(onConflict = OnConflictStrategy.IGNORE)
-    suspend fun insertData(Note: Note)
+    suspend fun insertData(note: Note)
+
+    @Delete
+    suspend fun deleteItem(note: Note)
 
     @Update
-    suspend fun updateData(Note: Note)
+    suspend fun updateData(note: Note)
 
 
 }

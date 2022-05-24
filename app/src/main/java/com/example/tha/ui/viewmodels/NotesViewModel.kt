@@ -1,4 +1,4 @@
-package com.example.tha.data.viewmodels
+package com.example.tha.ui.viewmodels
 
 import android.app.Application
 import android.content.Context
@@ -29,6 +29,12 @@ class NotesViewModel @Inject constructor (@ApplicationContext application: Conte
     fun updateData(note: Note) {
         viewModelScope.launch(Dispatchers.IO) {
             repository.updateData(note)
+        }
+    }
+
+    fun deleteItem(note: Note) {
+        viewModelScope.launch(Dispatchers.IO) {
+            repository.deleteItem(note)
         }
     }
 

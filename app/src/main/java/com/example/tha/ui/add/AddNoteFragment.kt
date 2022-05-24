@@ -2,7 +2,6 @@ package com.example.tha.ui.add
 
 import android.Manifest
 import android.app.Activity
-import android.app.Activity.RESULT_OK
 import android.app.Dialog
 import android.content.Intent
 import android.content.pm.PackageManager
@@ -22,7 +21,7 @@ import androidx.fragment.app.viewModels
 import androidx.navigation.fragment.findNavController
 import com.example.tha.R
 import com.example.tha.data.models.Note
-import com.example.tha.data.viewmodels.NotesViewModel
+import com.example.tha.ui.viewmodels.NotesViewModel
 import com.example.tha.databinding.DialogChoosePictureBinding
 import com.example.tha.databinding.FragmentAddNoteBinding
 import dagger.hilt.android.AndroidEntryPoint
