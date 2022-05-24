@@ -1,5 +1,8 @@
 # tha
 
+# Demo
+https://user-images.githubusercontent.com/57858666/170095348-af6afa0e-3e41-48c0-84a3-3c742be0d847.mp4
+
 
 ## Built With
 - [Kotlin](https://kotlinlang.org/) - First class and official programming language for Android development.
@@ -40,6 +43,8 @@
  This app uses [***MVVM (Model View View-Model)***](https://developer.android.com/jetpack/docs/guide#recommended-app-arch) architecture.
 
  ![](https://developer.android.com/topic/libraries/architecture/images/final-architecture.png)
+
+![diagram_task](https://user-images.githubusercontent.com/57858666/170096236-6dc26224-0894-4528-b656-23f534425c39.PNG)
 
 ## Technology Stack:
   1) Kotlin
